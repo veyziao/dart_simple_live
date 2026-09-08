@@ -58,7 +58,10 @@ jobs:
           EOF
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          # dynamic_color 1.9.0 requires a newer Kotlin Gradle plugin than this
+          # project uses. Keep the compatibility pin local to the CI workspace.
+          flutter pub add dynamic_color:1.8.1
 
       - name: Build release APKs
         run: flutter build apk --release --split-per-abi

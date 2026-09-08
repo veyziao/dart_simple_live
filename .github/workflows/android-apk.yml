@@ -2,10 +2,6 @@ name: Android APK (personal sideload)
 
 on:
   workflow_dispatch:
-  push:
-    branches: [master]
-    paths:
-      - .github/workflows/android-apk.yml
 
 permissions:
   contents: read
